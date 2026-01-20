@@ -18,8 +18,9 @@ module "app_service" {
   location     = "us-central1"
   service_name = "my-containerized-app"
   # This URL must match what Cloud Build will create.
-  container_image_url = "us-central1-docker.pkg.dev/${var.project_id}/my-app-repo/my-app:latest"
+  container_image_url = "us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0"
   depends_on          = [google_project_service.apis]
+  deletion_protection_enabled = false
 }
 
 # --- CI/CD Pipeline ---
@@ -30,8 +31,8 @@ module "cicd_pipeline" {
   location               = "us-central1"
   repo_id                = "my-app-repo"
   app_name               = "my-app"
-  github_owner           = "samperkins-cloud"           # <-- IMPORTANT: Change to your GitHub username
-  github_repo_name       = "gcp-professional-portfolio" # <-- IMPORTANT: Change to your repo name
+  github_owner           = "sammypk23"           # <-- IMPORTANT: Change to your GitHub username
+  github_repo_name       = "gcp-cloud-engineer-portfolio" # <-- IMPORTANT: Change to your repo name
   branch_name            = "^main$"
   cloud_run_service_name = module.app_service.service_name # Use output from the other module!
   app_source_path        = "./projects/06-automated-container-deployment/app"
