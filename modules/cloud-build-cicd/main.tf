@@ -13,7 +13,7 @@ resource "google_cloudbuild_trigger" "github_trigger" {
   location = "global" # Cloud Build triggers can be global
 
   repository_event_config {
-    repository = "sammypk23-gcp-cloud-engineer-portfolio"
+    repository = "projects/${var.project_id}/locations/${var.connection_region}/connections/${var.connection_name}/repositories/sammypk23-gcp-cloud-engineer-portfolio"
     push {
       branch = var.branch_name
     }
