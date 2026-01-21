@@ -85,7 +85,7 @@ resource "google_cloudbuild_trigger" "github_trigger" {
   depends_on = [
     google_project_iam_member.registry_writer,
     google_project_iam_member.run_developer,
-    google_project_iam_member.sa_user
+    google_project_iam_member.sa_user,
     google_project_iam_member.log_writer
   ]
 }
