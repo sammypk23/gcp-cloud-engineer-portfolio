@@ -35,7 +35,7 @@ module "cicd_pipeline" {
   github_repo_name       = "gcp-cloud-engineer-portfolio" # <-- IMPORTANT: Change to your repo name
   branch_name            = "^main$"
   cloud_run_service_name = module.app_service.service_name # Use output from the other module!
-  app_source_path        = "./projects/06-automated-container-deployment/app"
+  app_source_path        = "./projects/06-automated-container-deployment/apps"
   depends_on             = [google_project_service.apis]
   connection_name        = "github-connection" # The name you entered in the GCP console
   connection_region      = "us-central1"       # The region you chose in the GCP console
