@@ -16,8 +16,6 @@ The Cloud Build history shows a complete, successful pipeline run. Each stage—
 
 ![Successful Cloud Build Pipeline](docs/04-pipeline-success-log.png)
 
-*(Note: The screenshots should be placed in a `docs` folder within this project directory to match the path.)*
-
 ---
 
 ## Architecture & Design Choices
